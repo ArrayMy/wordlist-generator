@@ -109,6 +109,12 @@ world_list::combination_one(Daughter,Birthday_Son);
 world_list::combination_one(Daughter_Birthday,Son);
 world_list::combination_one(Daughter_Birthday,Birthday_Son);
 world_list::combination_one(Son,Birthday_Son);
+    /*Two combination in development*/
+world_list::combination_two_stringConvert(Name);
+world_list::combination_two_stringConvert(Surname);
+world_list::combination_two_stringConvert(Daughter);
+world_list::combination_two_stringConvert(Son);
+world_list::combination_two_stringConvert(Pet);
 };
 
 void world_list::start_choose(char choose) {
