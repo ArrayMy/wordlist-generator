@@ -52,15 +52,18 @@ void world_list::combination_two_stringConvert(string help){
 ofstream file("World_List_Array_My.txt");
 int x = 0;
 int y = 0;
+
 while(x==0){
     if(help[y]){
     world_list::convert_to_Ascii(help[y]);
-    file<<world_list::Array[world_list::My]<<endl;
+    file<<Array[My];
         y++;
     }else{
+    file<<endl;
     x++;
     }
  }
+
 }
 
 void world_list::combination_one(string help,string help1){
