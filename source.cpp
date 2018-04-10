@@ -40,10 +40,11 @@ void world_list::choose_form(string Name,string Surname,string Date,string Pet,s
 void world_list::convert_to_Ascii(char help){
 /*A-Z 65-90
 a-z   97-122*/
-int world_list::My=0;
+int My=0;
 int oneChar = (int) help;
-char world_list::Array[world_list::My] = (char) oneChar - 32;
-world_list::My++;
+char Array[My];
+Array[My]=(char) oneChar - 32;
+My++;
 
 }
 
