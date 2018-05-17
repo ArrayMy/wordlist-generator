@@ -16,6 +16,71 @@ void world_list::exiting_program(){
     system("pause");
 };
 
+void world_list::choose_free() {
+    cout << "quit   OR   exit  FOR  end";
+    int my,_numStrings =  0;
+    string ArrayString[my];
+    while(ArrayString[my] != "quit" || ArrayString[my] != "exit"){
+        cout << "Word:"<<endl;
+        cin >> ArrayString[my];
+        my++;
+    }
+    _numStrings = my;
+    my = 0;
+    while(my <= _numStrings){
+        world_list::combination_one(ArrayString[my],ArrayString[my+1]);
+        world_list::combination_two_stringConvert(ArrayString[my]);
+        world_list::combination_three(ArrayString[my]);
+        my++;
+    }
+}
+
+void world_list::combination_three(string help){
+    ofstream file("World_List_Array_My.txt");
+    int Years=1950;
+    int Months=0;
+    int Days=0;
+  while(Years<=2018){
+      Years ++;
+      while(Months<=12){
+          Months++;
+         while(Days<=7) {
+             file << help << Years << Months << Days;
+             file << help << Years << Days << Months;
+             file << help << Days << Years << Months;
+             file << help << Days << Months << Years;
+             file << help << Months << Years << Days;
+             file << help << Months << Days << Years;
+
+             file << Years << Months << Days << help;
+             file << Years << Months << help << Days;
+             file << Years << Days << Months << help;
+             file << Years << Days << help << Months;
+             file << Years << help << Months << Days;
+             file << Years << help << Days << Months;
+
+             file << Months << Years << Days << help;
+             file << Months << Years << help << Days;
+             file << Months << Days << help << Years;
+             file << Months << Days << Years << help;
+             file << Months << help << Years << Days;
+             file << Months << help << Days << Years;
+
+             file << Days << help << Months << Years;
+             file << Days << help << Years << Months;
+             file << Days << Months << Years << Days;
+             file << Days << Months << Days << Years;
+             file << Days << Years << Days << Months;
+             file << Days << Years << Months << Days;
+             Days++;
+         }
+      }
+  }
+
+}
+
+
+
 void world_list::choose_form(string Name,string Surname,string Date,string Pet,string Daughter,string Daughter_Birthday,string Son,string Birthday_Son){
     cout << "Set Name"<<endl;
     cin >> Name;
@@ -57,6 +122,8 @@ while(x==0){
     if(help[y]){
     world_list::convert_to_Ascii(help[y]);
     file<<Array[My];
+    world_list::combination_two_stringConvert(Array[my],Array[my+1]);
+    world_list::combination_three(Array[my]);
         y++;
     }else{
     file<<endl;
@@ -64,6 +131,11 @@ while(x==0){
     }
  }
 
+}
+
+void world_list::charset_dec(){
+    system(charset);
+    system("cls");
 }
 
 void world_list::combination_one(string help,string help1){
@@ -117,14 +189,20 @@ world_list::combination_two_stringConvert(Son);
 world_list::combination_two_stringConvert(Pet);
 };
 
+
+
 void world_list::start_choose(char choose) {
     cout << "Hello I'm World List Generator! :D" << endl;
     cout<<"Write everything with lower case!"<<endl;
+    cout<<endl;
+    cout<<"TYPE CHARSET!"<<endl;
+    cin>>charset;
     cout << "1.Form       OR          2.Random_Strings(not complete!)" << endl;
     cin>>choose;
     if(choose == '1') {
         world_list::choose_form(Name,Surname,Date,Pet,Daughter,Daughter_Birthday,Son,Birthday_Son);
     } else if(choose == '2') {
+        world_list::choose_free();
       cout << "Not complete, I'm so Tired";
     } else {
         world_list::exiting_program();

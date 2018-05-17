@@ -10,7 +10,10 @@ using namespace std;
 
 class world_list {
  public:
+    static char charset;
+    int static _numStrings;
      static int My;
+     static string ArrayString[];
      static char Array[];
      char help2;
      string help;
@@ -28,8 +31,11 @@ class world_list {
     void convert_to_Ascii(char help); /*HELP METHOD FOR COMBINATION TWO!*/
     void combination_two_stringConvert(string help);
     void combination_one(string help,string help1);
+    void combination_three(string help);
     void write_in_file(string Name,string Surname,string Date,string Pet,string Daughter,string Daughter_Birthday,string Son,string Birthday_Son);
     void choose_form(string Name,string Surname,string Date,string Pet,string Daughter,string Daughter_Birthday,string Son,string Birthday_Son);
+    void choose_free();
+    void charset_dec();
     void start_choose(char choose);
     void exiting_program();
 
